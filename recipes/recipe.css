@@ -1,0 +1,63 @@
+body {
+    background-color: rgba(200,200,0,0.5);
+    font-family: Garamond,Georgia,Lucida,serif;
+    font-size: 16px;
+    line-height: 1.8em;
+}
+div#container {
+    width: 86%;
+    margin: auto;
+}
+div.recipe-card {
+    background-image:url(recipe-card.jpg);
+    background-size: 100% 100%;
+    padding: 15px 20px 20px 100px;
+    margin: 40px 0;
+}
+h1,h2 {
+    font-family: "Helvetica Neue","source sans pro",sans-serif;
+}
+h1 {
+    font-size: 1.5em;
+    padding-bottom: .5em;
+    color: rgba(0,0,0,0.5);
+}
+h2 {
+    font-size: 1.2em;
+    padding-bottom: .3em;
+    color: rgba (0,0,0,0.6);
+}
+hr {
+    margin: 30px 0;
+}
+#index a {
+    color: red;
+}
+#index li {
+    display: inline-block;
+    padding: 0 20px;
+    font-family: sans-serif;
+    width: 150px;
+}
+#index li:before {
+    content: url(tomato.png);
+}
+#index li:hover {
+    -webkit-transform: scale(1.1,1.1) translatey(10px);
+}
+#index ul {
+    margin: 0;
+    padding: 0;
+}
+ol {
+  margin-left: -30px;
+}
+ol>li:after {
+    content: " BAM! ";
+}
+span.quantity {
+    color: rgba(0,0,0,0.6);
+}
+span.ingredient {
+    font-family: cursive;
+}

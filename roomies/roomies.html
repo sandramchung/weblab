@@ -1,0 +1,152 @@
+<!DOCTYPE = HTML>
+<html>
+
+<head>
+    <title>Roomies app by Sandra Chung</title>
+    
+    <link href="css/zero.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<script>
+var boys = []; // 31
+var girls = []; // 29
+var roomScore = []; // a 30x
+var rooms = []; // array of rooms and kids in them
+var roomMax = 8;
+var roomMin = 4;
+var kids = 30; // temporarily even to make this easier
+
+
+for(i=0; i<kids ; i++){
+  boys.push({
+    name: i,
+    room: null,
+    friends: randomFriends(i, kids),
+  })
+}
+
+// boys.forEach(function(boy){
+//   var count = 0;
+//   boy.friends.forEach(function(friend){
+//     var friend = boys[friend];
+//     if( friend.friends.indexOf(boy.name) != -1){
+//       count++;
+//     }
+//   });
+//   console.log(boy.name, count);
+// })
+
+function randomFriends(person, total){
+  var friends = []
+    , total_friends = getRandom(4) || 1
+    , j = 0;
+  while(j < total_friends ){
+    var f = getRandom(total);
+    if(f != person && friends.indexOf(f) != 1){
+      j++;
+      friends.push(f);
+    }
+  }
+
+return friends;
+
+}
+
+// perhaps weight the c hoices so that if someone lists you as a friend, you're more likely to list them as a friend
+
+function getRandom(num) {
+    return Math.floor(Math.random()* num);
+}
+
+console.log(boys);
+
+// function loadrooms() {
+//    for(i = 0; i < kids; i++){
+//     var room = [];
+//     var roomCount = 0;
+    
+//     room.push(i)
+//     if 
+        
+//    }
+// }
+
+console.log(rooms);
+
+// while (!allgood){
+//     // for each kid, check the current room for besties
+//     // for each kid, if no besties, check the other rooms for besties and move boy to room with at least one bestie
+//     // check to make sure each person is with at least one bestie
+// }
+
+function whichRoom(boy) {
+    var count = 0;
+    var hisRoom = -1;
+    while (hisRoom < 0) {
+        hisRoom = rooms[count].indexOf(boy)
+        count++
+    }
+return count-1;
+}
+
+function bestiesHere(boy,roomNum) {
+var count = 0;
+var whereBestie = 0;
+var bestiesPresent = 0;
+var numBesties = boys[boy].friends.length;
+var currBestie = 0;
+for (i=0; i < numBesties; i++) {
+    currBestie = boys[boy].friends[i];
+    whereBestie = rooms[roomNum].indexOf(currBestie);
+    if (whereBestie >= 0) {
+        bestiesPresent++;
+    }        
+}
+return bestiesPresent;
+}
+
+// function move(boy,roomnum) {
+//     // deletes boy from current room
+//     // adds boy to any room with at least one bestie
+// }
+
+// function checkBesties() {
+//     // checks that all boys are roomed with at least one bestie
+//    // does this by iterating through entire roomscore array and checking for zeroes
+//     return allgood; 
+// }
+
+</script>
+
+<!-- <div id="container">
+
+<h1>Girls</h1>
+                                                              
+<table id="girlstable">
+    <tbody id="girls">
+        <tr><th>First Name</th><th>Last Name</th><th></th><th></th></tr>
+        <tr><td>girl1</td><td></td><td><span class="button">edit name</span></td><td><span class="button">edit besties</span></td>
+    </tbody>
+</table>
+
+<h1>Boys</h1>
+                     
+<table id="boystable">
+    <tbody id="boys">
+        <tr><th>First Name</th><th>Last Name</th><th></th><th></th></tr>
+    </tbody>
+</table>
+
+
+<span class="button">Test button</span>
+
+       
+</div> -->
+<!-- close container-->                         
+</body>
+    
+</html>

@@ -1,0 +1,105 @@
+#playingField {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#ball {
+    position: absolute;
+    box-shadow: 2px 2px 2px #333;
+    -webkit-box-shadow: 2px 2px 2px #333;
+    -moz-box-shadow: 2px 2px 2px #333;
+}
+body {
+    background-color: #ddd;
+}
+#paddle {
+    position: absolute;
+    background-color: #aaa;
+    box-shadow: 2px 2px 2px #333;
+    -webkit-box-shadow: 2px 2px 2px #333;
+    -moz-box-shadow: 2px 2px 2px #333;
+}
+#lpaddle {
+    position: absolute;
+    background-color: #aaa;
+    box-shadow: 2px 2px 2px #333;
+    -webkit-box-shadow: 2px 2px 2px #333;
+    -moz-box-shadow: 2px 2px 2px #333;
+}
+#instructions {
+    display : block;
+    position: relative;
+    top: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding : 10px;
+    width: 30%;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+#timer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 20px;
+    width: 70px;
+    padding: 6px;
+    background-color: white;
+    color: #000;
+    font-weight: bold;
+    font-size: 2em;
+    opacity: 0.5;
+    font-family: Lucidatypewriter,monospace;
+    text-align: right;
+    line-height: 20px;
+}
+#scorebox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 120px;
+    padding: 6px;
+    background-color: white;
+    color: #000;
+    font-weight: bold;
+    font-size: 2em;
+    opacity: 0.4;
+    font-family: Lucidatypewriter,monospace;
+    text-align: left;
+    line-height: 20px;
+}
+#hiscorebox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 120px;
+    padding: 6px;
+    background-color: white;
+    color: #000;
+    font-weight: bold;
+    font-size: 2em;
+    opacity: 0.4;
+    font-family: Lucidatypewriter,monospace;
+    text-align: left;
+    line-height: 20px;
+
+}
+#playagain {
+    display : none;
+    position: relative;
+    top: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding : 10px;
+    width: 40%;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    color: #aaa;
+}
+
+
