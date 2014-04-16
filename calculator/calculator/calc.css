@@ -1,22 +1,33 @@
+#trouble {
+  width: 10%;
+  height: 20px;
+  position: fixed;
+  left: 0; 
+  top: 0;
+}
 body {
 	width: 100%;
 	height: 100%;
 }
-
 #container {
 	width: 30%;
 	height: 60%;
-	max-width: 600px;
+	max-width: 316px;
 	min-width: 250px;
 	min-height: 360px;
 	position: absolute;
 	right: 35%;
 	top: 10%;
-	border: 8px ridge darkred;
+	border: 10px ridge #65a9d7;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 	background-color: #333;
+  box-shadow: 2px 5px 6px #333;
+  -moz-box-shadow: 2px 5px 6px #333;
+  -webkit-box-shadow: 2px 5px 6px #333;
 }
-
-#display {
+#display-box {
 	border: 0;
 	background-color: #ccc;
 	height: 20%;
@@ -24,7 +35,6 @@ body {
 	position: relative;
 	top: 0;
 	left: 0;
-	background-image: url('smooth-690x461.jpeg');
 	z-index: 0;
 	background-image:-webkit-linear-gradient(
         top left,
@@ -75,18 +85,17 @@ body {
             transition:background-position 0s ease;
 
 }
-
-#display:hover {
+#display-box:hover {
  color:#fff;
     background-position:0 0, 0 0;
     -webkit-transition-duration:0.5s;
        -moz-transition-duration:0.5s;
             transition-duration:0.5s;
 }
-#value {
+#display {
 	border: 2px inset #aaa;
 	background-color: #bbb;
-	color: #000;
+	color: rgba(0,0,0,.9);
 	padding: 10px 2px;
 	width: 80%;
 	height: 13%;
@@ -96,8 +105,9 @@ body {
 	text-align: right;
 	font-family: monospace;
 	z-index: 100;
+  line-height: 13%;
+  font-size: 20px;
 }
-
 .buttonrowcontainer {
 	height: 15%;
 	border: 0;
@@ -106,7 +116,6 @@ body {
 	padding: 0;
 	width: 100%;
 }
-
 .calcbutton {
 	display: block;
 	float: left;
@@ -129,11 +138,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	color: #eee;
+  font-weight: 800;
+  font-size: 1.6em;
 	min-height: ;
 	transition: all .1s ease-out 0;
 	box-shadow: 3px 3px 3px #333;
 }
-
 .calcbutton:focus {
 	transform: translate(2px, -2px) scale(0.98);
 	-webkit-transform: translate(2px, -2px) scale(0.98);
@@ -146,9 +156,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', end
 	box-shadow: 1px 1px 1px #333;
 	-webkit-box-shadow: 1px 1px 1px #333;
 	-moz-box-shadow: 1px 1px 1px #333;
-
 }
-
+.operation:focus {
+  color: #ffff00;
+}
 .calcbutton:hover {
 	cursor: pointer; 
 	border-left: 2px solid #bbb;
@@ -171,5 +182,4 @@ background: -o-linear-gradient(-45deg,  #f16f5c 13%,#f6290c 27%,#e73827 82%,#e73
 background: -ms-linear-gradient(-45deg,  #f16f5c 13%,#f6290c 27%,#e73827 82%,#e73827 82%,#f16f5c 100%); /* IE10+ */
 background: linear-gradient(135deg,  #f16f5c 13%,#f6290c 27%,#e73827 82%,#e73827 82%,#f16f5c 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f16f5c', endColorstr='#f16f5c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
 }
