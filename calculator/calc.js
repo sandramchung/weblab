@@ -2,7 +2,7 @@
 // by github.com/sandramchung
 // for WebLab Spring 2014
 
-//debugging messages
+// debugging messages
 
 function output(message) {
   document.getElementById('trouble').innerHTML = message;
@@ -14,7 +14,7 @@ function clearEntry() {
   document.getElementById('display').value = '0';
 }
 
-// stores all the values and operations entered into the calculator since last clear operation
+// stores the values and results entered into the calculator since last clear operation
 
 var stack = [];
 
@@ -45,15 +45,18 @@ function backSpace() {
   }
 }
 
-// adds number to the display value
+// appends number to the display value
+// if current value and number are both zero, nothing happens
+// if current value is zero and number is not, substitute number for current value
 
 function updateDisplay(number) {
   var disp = document.getElementById('display');
-  if (disp.value === "0" || newValue) {
+  
+  if ((disp.value === "0" && number !== '0') || newValue) {
     disp.value = number;
     disp.style.backgroundColor = "#bbb";
     newValue = false;
-  } else {
+  } else if (disp.value !== '0') {
     disp.value += number;
   }
 }
@@ -70,14 +73,15 @@ function swapSign() {
 function updateStack(operation) {
   var disp = document.getElementById('display');
 
+  // when user tries to operate on a naked decimal point
+  if (disp.value === '.') {
+    return;
+  }
+  
   // add current display value to stack
   stack.push(parseFloat(disp.value));
 
-  // change display color to indicate that an operation is being performed
-  disp.style.backgroundColor = "#ccccaa";
-
-  // if at least two values and one operation have been entered into the stack, perform the last operation and store the result in the stack
-
+  // if at least two values have been entered into the stack, perform the last stored operation
   if (stack.length > 1) {
     switch (nextOp) {
     case "plus": 
@@ -95,6 +99,7 @@ function updateStack(operation) {
     case "":
       break;
     case "equals":
+      disp.style.backgroundColor = "#999";
       break;
     }
     newValue = true;
@@ -105,7 +110,7 @@ function updateStack(operation) {
 }
 
 
-// perform mathematical operations
+// perform mathematical operations and store result in stack
 
 function doAdd() {
   stack.push(stack[stack.length-2] + stack[stack.length-1]);
