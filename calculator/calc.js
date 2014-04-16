@@ -2,6 +2,8 @@
 // by github.com/sandramchung
 // for WebLab Spring 2014
 
+'use strict';
+
 // debugging messages
 
 function output(message) {
@@ -103,7 +105,7 @@ function updateStack(operation) {
       break;
     }
     newValue = true;
-    updateDisplay(stack[stack.length-1]);
+    updateDisplay(stack[stack.length - 1]);
   } 
   newValue = true;
   nextOp = operation;
@@ -113,19 +115,19 @@ function updateStack(operation) {
 // perform mathematical operations and store result in stack
 
 function doAdd() {
-  stack.push(stack[stack.length-2] + stack[stack.length-1]);
+  stack.push(stack[stack.length - 2] + stack[stack.length - 1]);
 }
 
 function doSubtract() {
-  stack.push(stack[stack.length-2] - stack[stack.length-1]);
+  stack.push(stack[stack.length - 2] - stack[stack.length - 1]);
 }
 
 function doDivide() {
-  stack.push(stack[stack.length-2] / stack[stack.length-1]);
+  stack.push(stack[stack.length - 2] / stack[stack.length - 1]);
 }
 
 function doMultiply() {
-  stack.push(stack[stack.length-2] * stack[stack.length-1]);
+  stack.push(stack[stack.length - 2] * stack[stack.length - 1]);
 }
 
 
